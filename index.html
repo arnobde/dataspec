@@ -4,51 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arnob Kumar Dey | Freelance Senior Data Engineering Consultant | AWS, Databricks, PySpark</title>
+    <title>Arnob Kumar Dey | Senior Data Engineer | AWS, Databricks, PySpark, Terraform, SQL, Python, ETL</title>
     <meta name="description"
-        content="Independent freelance Senior Data Engineering Consultant & Platform Architect. Designing and implementing scalable data pipelines, optimizing data warehouses, and integrating AI/LLM technologies. 10+ years of experience with AWS, Databricks, PySpark, and Terraform.">
+        content="Senior Data Engineer with 10+ years of experience specializing in AI-Driven Development, Databricks, AWS, and PySpark. Architecting scalable Medallion Architectures and ETL pipelines using modern AI Tools.">
     <meta name="keywords"
-        content="Freelance Data Engineer, Data Engineering Consultant, Data Pipeline Design, Data Pipeline Optimization, Data Warehousing, ETL ELT, AWS, PySpark, Python, SQL, Terraform, Airflow, Databricks, AI Driven Development, LLM, GenAI, Platform Architect, Batch Processing, Streaming Data">
+        content="Data Engineer, AWS, Python, SQL, Terraform, ETL, PySpark, Medallion Architecture, Data Pipeline, Platform Architect, AI Driven Development, AI Tools, Machine Learning, GenAI">
     <meta name="author" content="Arnob Kumar Dey">
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dataspec.dev/">
-    <meta property="og:title" content="Arnob Kumar Dey | Freelance Data Engineering Consultant">
+    <meta property="og:title" content="Arnob Kumar Dey | Senior Data Engineer">
     <meta property="og:description"
-        content="Independent freelance Senior Data Engineering Consultant. Designing scalable data pipelines, optimizing data warehouses, and integrating AI/LLM technologies. 10+ years with AWS, Databricks, PySpark.">
+        content="Senior Data Engineer with 10+ years of experience specializing in AI-Driven Development, Databricks, AWS, and PySpark. Architecting scalable Medallion Architectures and ETL pipelines using modern AI Tools.">
     <meta property="og:image" content="https://dataspec.dev/images/professional_photo.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Arnob Kumar Dey | Freelance Data Engineering Consultant">
+    <meta name="twitter:title" content="Arnob Kumar Dey | Senior Data Engineer">
     <meta name="twitter:description"
-        content="Independent freelance Senior Data Engineering Consultant. Designing scalable data pipelines, optimizing data warehouses, and integrating AI/LLM technologies.">
+        content="Senior Data Engineer with 10+ years of experience specializing in AI-Driven Development, Databricks, AWS, and PySpark. Architecting scalable Medallion Architectures and ETL pipelines using modern AI Tools.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://dataspec.dev/">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="resources/brand_logo_optimized.png">
-    <link rel="apple-touch-icon" href="resources/brand_logo_optimized.png">
-
-    <!-- Security Headers -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        primary: '#2563EB',
-                        'primary-light': '#3B82F6',
+                        primary: '#00D4FF',
                         secondary: '#7C3AED',
-                        accent: '#059669',
+                        accent: '#10B981',
+                        dark: {
+                            900: '#0A0A0F',
+                            800: '#12121A',
+                            700: '#1A1A25',
+                            600: '#252530'
+                        }
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -70,54 +69,73 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-[#FAFBFC] text-slate-900 font-sans antialiased">
+<body class="bg-dark-900 text-gray-100 font-sans antialiased">
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-black">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <a href="#hero" class="text-xl font-bold text-black">dataspec.dev</a>
+                <a href="#hero" class="text-xl font-bold gradient-text">dataspec.dev</a>
 
-                <a href="#contact" class="px-5 py-2 bg-black text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition-colors">Contact Me</a>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                    <a href="#certifications" class="nav-link">Certifications</a>
+                    <a href="#contact" class="btn-primary">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-dark-700 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-800 border-t border-dark-600">
+            <div class="px-4 py-3 space-y-2">
+                <a href="#about" class="block py-2 nav-link">About</a>
+                <a href="#skills" class="block py-2 nav-link">Skills</a>
+                <a href="#portfolio" class="block py-2 nav-link">Portfolio</a>
+                <a href="#certifications" class="block py-2 nav-link">Certifications</a>
+                <a href="#contact" class="block py-2 btn-primary text-center">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-white to-violet-50/60"></div>
+        <div class="absolute inset-0 bg-gradient-radial from-secondary/10 via-transparent to-transparent"></div>
         <div class="hero-grid"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
             <div class="text-center">
-                <!-- Brand Logo -->
-                <div class="mb-10 animate-fade-in">
-                    <img src="resources/brand_logo_optimized.png" alt="dataspec.dev brand logo"
-                        class="w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 object-contain mx-auto drop-shadow-2xl">
-                </div>
-
                 <div
-                    class="inline-flex items-center px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-8 animate-fade-in">
+                    class="inline-flex items-center px-4 py-2 rounded-full bg-dark-700 border border-dark-600 mb-8 animate-fade-in">
                     <span class="w-2 h-2 bg-accent rounded-full mr-2 animate-pulse"></span>
-                    <span class="text-sm text-slate-600">Independent Consultant · Remote & On-Site</span>
+                    <span class="text-sm text-gray-400">Available for new opportunities</span>
                 </div>
 
                 <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">
-                    <span class="block text-slate-900">Senior Data Engineering</span>
-                    <span class="block gradient-text">Consultant & Architect</span>
+                    <span class="block text-white">Senior Data Engineer</span>
+                    <span class="block gradient-text">&amp; Platform Architect</span>
                 </h1>
 
-                <p class="text-lg sm:text-xl text-slate-500 max-w-3xl mx-auto mb-4 animate-fade-in-up animation-delay-200">
-                    Scalable data pipelines. Engineered for impact.
-                </p>
-                <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto mb-10 animate-fade-in-up animation-delay-200">
-                    Designing &amp; implementing data pipelines, optimizing existing architectures,
-                    and integrating AI/LLM technologies — for batch and streaming workloads.
+                <p
+                    class="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto mb-10 animate-fade-in-up animation-delay-200">
+                    Building scalable data platforms and engineering solutions with 10+ years of experience.
+                    Specializing in AI-Driven Development, cloud architecture, ETL pipelines, and Medallion data
+                    architectures.
                 </p>
 
                 <div
                     class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up animation-delay-400">
-                    <a href="#services" class="btn-primary">
-                        <span>Explore Services</span>
+                    <a href="#portfolio" class="btn-primary">
+                        <span>View My Work</span>
                         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -128,110 +146,12 @@
         </div>
 
         <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-            <a href="#services" class="text-slate-400 hover:text-primary transition-colors">
+            <a href="#about" class="text-gray-500 hover:text-primary transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
             </a>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 lg:py-32 section-alt relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-primary font-mono text-base mb-4 block">// What I Do</span>
-                <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-                    Engineering <span class="gradient-text">Services</span>
-                </h2>
-                <p class="text-slate-500 max-w-2xl mx-auto">
-                    End-to-end data engineering solutions tailored to your business needs
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
-                <!-- Service 1 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900">Data Pipeline Design & Implementation</h3>
-                    <p class="text-slate-500 leading-relaxed">
-                        Architect and build end-to-end data pipelines for both batch and streaming workloads.
-                        From ingestion to transformation to delivery — designed for reliability and scale.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto pt-4">
-                        <span class="tech-tag">ETL/ELT</span>
-                        <span class="tech-tag">Batch</span>
-                        <span class="tech-tag">Streaming</span>
-                        <span class="tech-tag">Airflow</span>
-                    </div>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900">Pipeline Optimization & Modernization</h3>
-                    <p class="text-slate-500 leading-relaxed">
-                        Revise, refactor, and optimize existing data pipelines for better performance and lower cost.
-                        Migrate legacy systems to modern cloud-native architectures.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto pt-4">
-                        <span class="tech-tag">Performance</span>
-                        <span class="tech-tag">Cost Reduction</span>
-                        <span class="tech-tag">Migration</span>
-                    </div>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900">Data Warehousing & Lakehouse</h3>
-                    <p class="text-slate-500 leading-relaxed">
-                        Design and implement scalable data warehouses and lakehouse architectures
-                        using Medallion patterns for reliable, queryable, and maintainable data.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto pt-4">
-                        <span class="tech-tag">Medallion</span>
-                        <span class="tech-tag">Databricks</span>
-                        <span class="tech-tag">Data Mart</span>
-                    </div>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900">AI & LLM Integration</h3>
-                    <p class="text-slate-500 leading-relaxed">
-                        Leverage the latest AI, LLM, and GenAI technologies within your data platform.
-                        From embedding models in pipelines to building intelligent data products.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mt-auto pt-4">
-                        <span class="tech-tag">GenAI</span>
-                        <span class="tech-tag">LLM</span>
-                        <span class="tech-tag">ML Pipelines</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -242,45 +162,46 @@
                 <div class="relative">
                     <div class="aspect-square max-w-md mx-auto lg:mx-0 relative">
                         <div
-                            class="absolute inset-0 bg-gradient-to-br from-blue-100 to-violet-100 rounded-2xl transform rotate-6">
+                            class="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-2xl transform rotate-6">
                         </div>
-                        <img src="images/professional_photo.png" alt="Arnob Kumar Dey - Senior Data Engineering Consultant"
-                            class="relative rounded-2xl w-full h-full object-cover shadow-xl">
+                        <img src="images/professional_photo.png" alt="Arnob Kumar Dey - Senior Data Engineer"
+                            class="relative rounded-2xl w-full h-full object-cover shadow-2xl">
                     </div>
                 </div>
 
                 <div>
                     <span class="text-primary font-mono text-base mb-4 block">// About Me</span>
                     <h2 class="text-3xl sm:text-4xl font-bold mb-6">
-                        Engineering Data Solutions
-                        <span class="gradient-text">at Enterprise Scale</span>
+                        Crafting Data Solutions for
+                        <span class="gradient-text">Enterprise Scale</span>
                     </h2>
 
-                    <p class="text-slate-500 text-lg mb-6 leading-relaxed">
-                        I'm <strong class="text-slate-900">Arnob Kumar Dey</strong>, an independent freelance
-                        Senior Data Engineering Consultant with over <strong class="text-slate-900">10 years of
-                        experience</strong> helping organizations transform their data infrastructure.
+                    <p class="text-gray-400 text-lg mb-6 leading-relaxed">
+                        With over <strong class="text-white">10 years of experience</strong> in data engineering and
+                        platform architecture,
+                        I've helped Fortune 500 companies transform their data infrastructure. My expertise spans from
+                        designing robust ETL pipelines to implementing enterprise-wide data governance frameworks.
                     </p>
 
-                    <p class="text-slate-500 text-lg mb-8 leading-relaxed">
-                        I hold an <strong class="text-slate-900">M.Tech from BITS Pilani</strong> and specialize in
-                        cloud-native data architectures, particularly the Medallion Architecture pattern.
-                        I work with Fortune 500 companies and fast-growing startups alike — designing pipelines that
-                        are reliable, scalable, and cost-effective.
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        I hold an <strong class="text-white">M.Tech from BITS Pilani</strong> and have developed a deep
+                        expertise in
+                        cloud-native data architectures, particularly the Medallion Architecture pattern that enables
+                        reliable, scalable, and maintainable data lakes.
                     </p>
 
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
                         <div class="stat-card">
                             <span class="text-3xl font-bold gradient-text">10+</span>
-                            <span class="text-slate-500 text-sm">Years Experience</span>
+                            <span class="text-gray-400 text-sm">Years Experience</span>
                         </div>
                         <div class="stat-card">
                             <span class="text-3xl font-bold gradient-text">50+</span>
-                            <span class="text-slate-500 text-sm">Projects Delivered</span>
+                            <span class="text-gray-400 text-sm">Projects Delivered</span>
                         </div>
                         <div class="stat-card">
                             <span class="text-3xl font-bold gradient-text">5+</span>
-                            <span class="text-slate-500 text-sm">Fortune 500 Clients</span>
+                            <span class="text-gray-400 text-sm">Fortune 500 Clients</span>
                         </div>
                     </div>
                 </div>
@@ -289,87 +210,96 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 lg:py-32 section-alt relative">
+    <section id="skills" class="py-20 lg:py-32 bg-dark-800 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <span class="text-primary font-mono text-base mb-4 block">// Technical Skills</span>
                 <h2 class="text-3xl sm:text-4xl font-bold mb-4">
                     My <span class="gradient-text">Tech Stack</span>
                 </h2>
-                <p class="text-slate-500 max-w-2xl mx-auto">
-                    Battle-tested tools and platforms I use to deliver production-grade solutions
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Expertise in modern data engineering tools and cloud platforms
                 </p>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 max-w-5xl mx-auto">
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                 <div class="skill-card">
-                    <div class="skill-icon bg-white p-2 rounded-xl shadow-sm">
+                    <div class="skill-icon bg-white p-2 rounded-xl">
                         <img src="images/aws-logo.png" alt="AWS" class="w-10 h-10 object-contain">
                     </div>
-                    <span class="text-sm font-medium text-slate-700">AWS</span>
+                    <span class="text-sm font-medium">AWS</span>
                 </div>
 
                 <div class="skill-card">
-                    <div class="skill-icon bg-white p-2 rounded-xl shadow-sm">
-                        <img src="images/pyspark-logo.png" alt="PySpark" class="w-10 h-10 object-contain">
-                    </div>
-                    <span class="text-sm font-medium text-slate-700">PySpark</span>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon bg-white p-2 rounded-xl shadow-sm">
+                    <div class="skill-icon bg-white p-2 rounded-xl">
                         <img src="images/python-logo.png" alt="Python" class="w-10 h-10 object-contain">
                     </div>
-                    <span class="text-sm font-medium text-slate-700">Python</span>
+                    <span class="text-sm font-medium">Python</span>
                 </div>
 
                 <div class="skill-card">
-                    <div class="skill-icon bg-white p-2 rounded-xl shadow-sm">
+                    <div class="skill-icon bg-white p-2 rounded-xl">
                         <img src="images/sql-logo.png" alt="SQL" class="w-10 h-10 object-contain">
                     </div>
-                    <span class="text-sm font-medium text-slate-700">SQL</span>
+                    <span class="text-sm font-medium">SQL</span>
                 </div>
 
                 <div class="skill-card">
-                    <div class="skill-icon bg-white p-2 rounded-xl shadow-sm">
+                    <div class="skill-icon bg-white p-2 rounded-xl">
                         <img src="images/terraform-logo.png" alt="Terraform" class="w-10 h-10 object-contain">
                     </div>
-                    <span class="text-sm font-medium text-slate-700">Terraform</span>
+                    <span class="text-sm font-medium">Terraform</span>
                 </div>
 
                 <div class="skill-card">
-                    <div class="skill-icon bg-white p-2 rounded-xl shadow-sm">
-                        <img src="images/airflow-logo.png" alt="Airflow" class="w-10 h-10 object-contain">
+                    <div class="skill-icon bg-white p-2 rounded-xl">
+                        <img src="images/data-engineering-logo.png" alt="Data Engineering"
+                            class="w-10 h-10 object-contain">
                     </div>
-                    <span class="text-sm font-medium text-slate-700">Airflow</span>
+                    <span class="text-sm font-medium">Data Engineering</span>
                 </div>
 
                 <div class="skill-card">
-                    <div class="skill-icon bg-white p-2 rounded-xl shadow-sm">
+                    <div class="skill-icon bg-white p-2 rounded-xl">
+                        <img src="images/etl-logo.png" alt="ETL" class="w-10 h-10 object-contain">
+                    </div>
+                    <span class="text-sm font-medium">ETL</span>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon bg-white p-2 rounded-xl">
+                        <img src="images/data-pipeline-logo.png" alt="Data Pipeline" class="w-10 h-10 object-contain">
+                    </div>
+                    <span class="text-sm font-medium">Data Pipeline</span>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon bg-white p-2 rounded-xl">
+                        <img src="images/pyspark-logo.png" alt="PySpark" class="w-10 h-10 object-contain">
+                    </div>
+                    <span class="text-sm font-medium">PySpark</span>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon bg-white p-2 rounded-xl">
+                        <img src="images/medallion-logo.png" alt="Medallion Architecture"
+                            class="w-10 h-10 object-contain">
+                    </div>
+                    <span class="text-sm font-medium">Medallion Architecture</span>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon bg-white p-2 rounded-xl">
                         <img src="images/databricks-logo.png" alt="Databricks" class="w-10 h-10 object-contain">
                     </div>
-                    <span class="text-sm font-medium text-slate-700">Databricks</span>
+                    <span class="text-sm font-medium">Databricks</span>
                 </div>
 
                 <div class="skill-card">
-                    <div class="skill-icon bg-white p-2 rounded-xl shadow-sm">
-                        <img src="images/etl-logo.png" alt="ETL/ELT" class="w-10 h-10 object-contain">
+                    <div class="skill-icon bg-white p-2 rounded-xl">
+                        <img src="images/ai-tools-logo.png" alt="AI Tools & GenAI" class="w-10 h-10 object-contain">
                     </div>
-                    <span class="text-sm font-medium text-slate-700">ETL / ELT</span>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon bg-white p-2 rounded-xl shadow-sm">
-                        <img src="images/ai-tools-logo.png" alt="AI / LLM" class="w-10 h-10 object-contain">
-                    </div>
-                    <span class="text-sm font-medium text-slate-700">AI / LLM</span>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon bg-white p-2 rounded-xl shadow-sm">
-                        <img src="images/medallion-logo.png" alt="Medallion Architecture" class="w-10 h-10 object-contain">
-                    </div>
-                    <span class="text-sm font-medium text-slate-700">Medallion Architecture</span>
+                    <span class="text-sm font-medium">AI Tools & GenAI</span>
                 </div>
             </div>
         </div>
@@ -383,7 +313,7 @@
                 <h2 class="text-3xl sm:text-4xl font-bold mb-4">
                     Featured <span class="gradient-text">Projects</span>
                 </h2>
-                <p class="text-slate-500 max-w-2xl mx-auto">
+                <p class="text-gray-400 max-w-2xl mx-auto">
                     Enterprise-scale data solutions that drive business value
                 </p>
             </div>
@@ -393,19 +323,21 @@
                 <article class="case-study-card group">
                     <div class="p-8">
                         <div class="flex items-center gap-3 mb-4">
-                            <span class="px-3 py-1 text-xs font-medium bg-blue-50 text-primary rounded-full">Data
+                            <span class="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">Data
                                 Modernization</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-violet-50 text-secondary rounded-full">Automotive</span>
+                            <span
+                                class="px-3 py-1 text-xs font-medium bg-secondary/10 text-secondary rounded-full">Automotive</span>
                         </div>
 
                         <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
-                            Recall Modernization & Data Mart Development
-                        </h3>
-                        <p class="text-sm text-slate-400 mb-4">S&P Global</p>
 
-                        <p class="text-slate-500 mb-6 leading-relaxed">
+                        </h3>
+                        <p class="text-sm text-gray-500 mb-4">S&P Global</p>
+
+                        <p class="text-gray-400 mb-6 leading-relaxed">
                             Legacy system hosted on VMware needed modernization for better scalability. Migrated the
-                            end-to-end system to a managed AWS environment and architected a centralized "Recall Data Mart".
+                            end-to-end
+                            system to a managed AWS environment and architected a centralized "Recall Data Mart".
                         </p>
 
                         <div class="space-y-3 mb-6">
@@ -415,7 +347,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span class="text-slate-600">Migrated legacy VMware system to managed AWS</span>
+                                <span class="text-gray-300">Migrated legacy VMware system to managed AWS</span>
                             </div>
                             <div class="flex items-start gap-3">
                                 <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
@@ -423,7 +355,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span class="text-slate-600">Architected centralized Recall Data Mart</span>
+                                <span class="text-gray-300">Architected centralized Recall Data Mart</span>
                             </div>
                             <div class="flex items-start gap-3">
                                 <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
@@ -431,7 +363,8 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span class="text-slate-600">Optimized query performance with AWS Glue & Apache Iceberg</span>
+                                <span class="text-gray-300">Optimized query performance with AWS Glue & Apache
+                                    Iceberg</span>
                             </div>
                         </div>
 
@@ -447,18 +380,21 @@
                 <article class="case-study-card group">
                     <div class="p-8">
                         <div class="flex items-center gap-3 mb-4">
-                            <span class="px-3 py-1 text-xs font-medium bg-blue-50 text-primary rounded-full">Cloud-Native</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-emerald-50 text-accent rounded-full">Aviation</span>
+                            <span
+                                class="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">Cloud-Native</span>
+                            <span
+                                class="px-3 py-1 text-xs font-medium bg-accent/10 text-accent rounded-full">Aviation</span>
                         </div>
 
                         <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
                             OE Scheduling Optimizer
                         </h3>
-                        <p class="text-sm text-slate-400 mb-4">Delta Airlines</p>
+                        <p class="text-sm text-gray-500 mb-4">Delta Airlines</p>
 
-                        <p class="text-slate-500 mb-6 leading-relaxed">
+                        <p class="text-gray-400 mb-6 leading-relaxed">
                             Manual pilot scheduling needed automation to ensure strict FAA regulation compliance. Led
-                            the design of a cloud-native scheduling optimizer using AWS CDK, Lambda for orchestration, and
+                            the design
+                            of a cloud-native scheduling optimizer using AWS CDK, Lambda for orchestration, and
                             SageMaker for model deployment.
                         </p>
 
@@ -469,7 +405,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span class="text-slate-600">Automated pilot scheduling with FAA compliance</span>
+                                <span class="text-gray-300">Automated pilot scheduling with FAA compliance</span>
                             </div>
                             <div class="flex items-start gap-3">
                                 <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
@@ -477,7 +413,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span class="text-slate-600">Cloud-native architecture with AWS CDK</span>
+                                <span class="text-gray-300">Cloud-native architecture with AWS CDK</span>
                             </div>
                             <div class="flex items-start gap-3">
                                 <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
@@ -485,7 +421,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span class="text-slate-600">ML model deployment via SageMaker</span>
+                                <span class="text-gray-300">ML model deployment via SageMaker</span>
                             </div>
                         </div>
 
@@ -498,20 +434,23 @@
                 </article>
 
                 <!-- Data Validation Framework -->
-                <article class="case-study-card group lg:col-span-2 lg:max-w-2xl lg:mx-auto">
+                <article class="case-study-card group">
                     <div class="p-8">
                         <div class="flex items-center gap-3 mb-4">
-                            <span class="px-3 py-1 text-xs font-medium bg-blue-50 text-primary rounded-full">Data Quality</span>
-                            <span class="px-3 py-1 text-xs font-medium bg-amber-50 text-amber-600 rounded-full">Healthcare</span>
+                            <span class="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">Data
+                                Quality</span>
+                            <span
+                                class="px-3 py-1 text-xs font-medium bg-amber-500/10 text-amber-400 rounded-full">Healthcare</span>
                         </div>
 
                         <h3 class="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
                             Data Validation Framework
                         </h3>
-                        <p class="text-sm text-slate-400 mb-4">Internal Project</p>
+                        <p class="text-sm text-gray-500 mb-4">Internal Project</p>
 
-                        <p class="text-slate-500 mb-6 leading-relaxed">
-                            Designed a custom framework using Great Expectations to enforce data quality standards across
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Designed a custom framework using Great Expectations to enforce data quality standards
+                            across
                             pipelines handling FHIR healthcare data, ensuring compliance and reliability.
                         </p>
 
@@ -522,7 +461,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span class="text-slate-600">Custom Great Expectations framework</span>
+                                <span class="text-gray-300">Custom Great Expectations framework</span>
                             </div>
                             <div class="flex items-start gap-3">
                                 <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
@@ -530,7 +469,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span class="text-slate-600">FHIR healthcare data compliance</span>
+                                <span class="text-gray-300">FHIR healthcare data compliance</span>
                             </div>
                             <div class="flex items-start gap-3">
                                 <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
@@ -538,7 +477,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M5 13l4 4L19 7" />
                                 </svg>
-                                <span class="text-slate-600">Automated data quality enforcement</span>
+                                <span class="text-gray-300">Automated data quality enforcement</span>
                             </div>
                         </div>
 
@@ -553,67 +492,15 @@
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section id="process" class="py-20 lg:py-32 section-alt relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-primary font-mono text-base mb-4 block">// How I Work</span>
-                <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-                    My <span class="gradient-text">Process</span>
-                </h2>
-                <p class="text-slate-500 max-w-2xl mx-auto">
-                    A proven approach to delivering data engineering solutions
-                </p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-                <!-- Connector line (desktop only) -->
-                <div class="process-connector hidden lg:block absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary/20 via-primary/40 to-secondary/20"></div>
-
-                <div class="process-step text-center relative">
-                    <div class="process-number mx-auto mb-6">1</div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">Discovery</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        Understand your data landscape, existing infrastructure, and business objectives.
-                    </p>
-                </div>
-
-                <div class="process-step text-center relative">
-                    <div class="process-number mx-auto mb-6">2</div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">Architecture</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        Design scalable, cost-effective solutions aligned with your tech stack and goals.
-                    </p>
-                </div>
-
-                <div class="process-step text-center relative">
-                    <div class="process-number mx-auto mb-6">3</div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">Implementation</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        Build, test, and deploy with CI/CD best practices and thorough documentation.
-                    </p>
-                </div>
-
-                <div class="process-step text-center relative">
-                    <div class="process-number mx-auto mb-6">4</div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-3">Optimization</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        Monitor performance, tune for efficiency, and iterate for continuous improvement.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Certifications Section -->
-    <section id="certifications" class="py-20 lg:py-32 relative">
+    <section id="certifications" class="py-20 lg:py-32 bg-dark-800 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <span class="text-primary font-mono text-base mb-4 block">// Credentials</span>
                 <h2 class="text-3xl sm:text-4xl font-bold mb-4">
                     Professional <span class="gradient-text">Certifications</span>
                 </h2>
-                <p class="text-slate-500 max-w-2xl mx-auto">
+                <p class="text-gray-400 max-w-2xl mx-auto">
                     Verified expertise in cloud and data engineering technologies
                 </p>
             </div>
@@ -622,14 +509,14 @@
                 <!-- AWS Certification -->
                 <div class="cert-card">
                     <div class="flex items-center gap-6">
-                        <div class="w-24 h-24 flex-shrink-0 bg-white rounded-xl p-2 flex items-center justify-center shadow-sm border border-slate-100">
+                        <div class="w-24 h-24 flex-shrink-0 bg-white rounded-xl p-2 flex items-center justify-center">
                             <img src="images/aws-certified-developer-associate.png"
                                 alt="AWS Certified Developer Associate" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <h3 class="text-xl font-bold mb-1">AWS Certified</h3>
                             <p class="text-primary font-medium mb-2">Developer Associate</p>
-                            <p class="text-slate-500 text-sm">Expertise in AWS services, deployment, and security best
+                            <p class="text-gray-400 text-sm">Expertise in AWS services, deployment, and security best
                                 practices</p>
                         </div>
                     </div>
@@ -638,14 +525,14 @@
                 <!-- Databricks Certification -->
                 <div class="cert-card">
                     <div class="flex items-center gap-6">
-                        <div class="w-24 h-24 flex-shrink-0 bg-white rounded-xl p-2 flex items-center justify-center shadow-sm border border-slate-100">
+                        <div class="w-24 h-24 flex-shrink-0 bg-white rounded-xl p-2 flex items-center justify-center">
                             <img src="images/databricks_certified_logo.png" alt="Databricks Data Engineer Associate"
                                 class="w-full h-full object-contain">
                         </div>
                         <div>
                             <h3 class="text-xl font-bold mb-1">Databricks Certified</h3>
                             <p class="text-primary font-medium mb-2">Data Engineer Associate</p>
-                            <p class="text-slate-500 text-sm">Proficiency in Databricks, Apache Spark, and lakehouse
+                            <p class="text-gray-400 text-sm">Proficiency in Databricks, Apache Spark, and lakehouse
                                 architecture</p>
                         </div>
                     </div>
@@ -655,16 +542,16 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 lg:py-32 section-alt relative">
+    <section id="contact" class="py-20 lg:py-32 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto">
                 <div class="text-center mb-12">
                     <span class="text-primary font-mono text-base mb-4 block">// Get In Touch</span>
                     <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-                        Start a <span class="gradient-text">Conversation</span>
+                        Let's <span class="gradient-text">Connect</span>
                     </h2>
-                    <p class="text-slate-500">
-                        Have a data engineering challenge or project in mind? Let's discuss how I can help.
+                    <p class="text-gray-400">
+                        Have a project in mind or want to discuss opportunities? I'd love to hear from you.
                     </p>
                 </div>
 
@@ -679,22 +566,22 @@
 
                     <div class="grid md:grid-cols-2 gap-6 mb-6">
                         <div>
-                            <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Name</label>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
                             <input type="text" id="name" name="name" required class="form-input"
                                 placeholder="Your name">
                         </div>
 
                         <div>
-                            <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Email</label>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
                             <input type="email" id="email" name="email" required class="form-input"
                                 placeholder="your.email@example.com">
                         </div>
                     </div>
 
                     <div class="mb-6">
-                        <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Message</label>
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
                         <textarea id="message" name="message" rows="6" required class="form-input resize-none"
-                            placeholder="Tell me about your data engineering challenge..."></textarea>
+                            placeholder="Tell me about your project or opportunity..."></textarea>
                     </div>
 
                     <!-- Netlify reCAPTCHA -->
@@ -713,22 +600,22 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 border-t border-slate-200 bg-white">
+    <footer class="py-8 border-t border-dark-600">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                <div class="text-slate-500 text-sm">
-                    &copy; 2026 Arnob Kumar Dey. All rights reserved.
+                <div class="text-gray-400 text-sm">
+                    © 2026 Arnob Kumar Dey. All rights reserved.
                 </div>
                 <div class="flex items-center gap-6">
                     <a href="https://www.linkedin.com/in/arnobde/" target="_blank" rel="noopener noreferrer"
-                        class="text-slate-400 hover:text-primary transition-colors">
+                        class="text-gray-400 hover:text-primary transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                         </svg>
                     </a>
-                    <a href="https://github.com/arnobde" target="_blank" rel="noopener noreferrer"
-                        class="text-slate-400 hover:text-primary transition-colors">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                        class="text-gray-400 hover:text-primary transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -741,6 +628,21 @@
 
     <!-- Scripts -->
     <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
         // Navbar background on scroll
         const navbar = document.getElementById('navbar');
 
@@ -766,7 +668,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.skill-card, .service-card, .case-study-card, .cert-card, .stat-card, .process-step').forEach(el => {
+        document.querySelectorAll('.skill-card, .case-study-card, .cert-card, .stat-card').forEach(el => {
             observer.observe(el);
         });
     </script>

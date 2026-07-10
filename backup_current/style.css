@@ -1,0 +1,633 @@
+/* ============================================================
+   dataspec.dev — Portfolio Stylesheet
+   A light-theme, production-ready CSS layer for a freelance
+   data engineering consultant site. Works alongside Tailwind
+   CSS CDN utility classes.
+   ============================================================ */
+
+/* ---------- 1. Design Tokens (Custom Properties) ---------- */
+:root {
+  /* Primary palette */
+  --color-primary:       #2563EB;
+  --color-primary-light:  #3B82F6;
+  --color-primary-50:    #EFF6FF;
+  --color-primary-100:   #DBEAFE;
+
+  /* Secondary palette */
+  --color-secondary:     #7C3AED;
+  --color-secondary-50:  #F5F3FF;
+
+  /* Accent palette */
+  --color-accent:        #059669;
+  --color-accent-light:  #10B981;
+
+  /* Backgrounds */
+  --bg-main:             #FAFBFC;
+  --bg-alt:              #F1F5F9;
+
+  /* Surfaces */
+  --surface:             #FFFFFF;
+  --surface-hover:       #F8FAFC;
+
+  /* Text */
+  --text-primary:        #0F172A;
+  --text-secondary:      #475569;
+  --text-tertiary:       #94A3B8;
+
+  /* Borders */
+  --border:              #E2E8F0;
+  --border-hover:        #CBD5E1;
+
+  /* Gradient */
+  --gradient:            linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+
+  /* Shadows */
+  --shadow-sm:           0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md:           0 4px 6px -1px rgba(0, 0, 0, 0.07),
+                         0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg:           0 10px 15px -3px rgba(0, 0, 0, 0.08),
+                         0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl:           0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                         0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  --shadow-glow:         0 0 20px rgba(37, 99, 235, 0.25);
+
+  /* Transitions */
+  --transition-base:     all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Radii */
+  --radius-sm:           0.375rem;
+  --radius-md:           0.5rem;
+  --radius-lg:           0.75rem;
+  --radius-xl:           1rem;
+  --radius-full:         9999px;
+}
+
+/* ---------- 2. Base & Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- 3. Selection & Scrollbar ---------- */
+::selection {
+  background-color: rgba(37, 99, 235, 0.15);
+}
+
+/* Webkit scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-alt);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--bg-alt);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-hover) var(--bg-alt);
+}
+
+/* ---------- 4. Focus & Accessibility ---------- */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ---------- 5. Gradient Text ---------- */
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ---------- 6. Hero Grid Background ---------- */
+.hero-grid {
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, transparent 80%);
+          mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, transparent 80%);
+}
+
+/* ---------- 7. Radial Gradient Utility ---------- */
+.bg-gradient-radial {
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    var(--color-primary-50) 0%,
+    transparent 70%
+  );
+}
+
+/* ---------- 8. Navigation ---------- */
+.nav-link {
+  position: relative;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-base);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient);
+  border-radius: var(--radius-full);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-scrolled {
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- 9. Buttons ---------- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--gradient);
+  color: #FFFFFF;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: var(--transition-base);
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--surface);
+  color: var(--text-primary);
+  font-weight: 600;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: var(--transition-base);
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-secondary:active {
+  background: var(--surface-hover);
+}
+
+/* ---------- 10. Stat Card ---------- */
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-base);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ---------- 11. Skill Card ---------- */
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition-base);
+}
+
+.skill-card.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    var(--shadow-lg),
+    0 0 20px rgba(37, 99, 235, 0.12);
+}
+
+.skill-card.animate-in:hover {
+  transform: translateY(-4px);
+}
+
+/* Staggered delays for skill cards */
+.skill-card:nth-child(1)  { transition-delay: 0.05s; }
+.skill-card:nth-child(2)  { transition-delay: 0.10s; }
+.skill-card:nth-child(3)  { transition-delay: 0.15s; }
+.skill-card:nth-child(4)  { transition-delay: 0.20s; }
+.skill-card:nth-child(5)  { transition-delay: 0.25s; }
+.skill-card:nth-child(6)  { transition-delay: 0.30s; }
+.skill-card:nth-child(7)  { transition-delay: 0.35s; }
+.skill-card:nth-child(8)  { transition-delay: 0.40s; }
+.skill-card:nth-child(9)  { transition-delay: 0.45s; }
+.skill-card:nth-child(10) { transition-delay: 0.50s; }
+
+/* ---------- 12. Skill Icon ---------- */
+.skill-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--radius-lg);
+}
+
+/* ---------- 13. Service Card ---------- */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition-base);
+}
+
+.service-card.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    var(--shadow-lg),
+    0 0 20px rgba(37, 99, 235, 0.12);
+}
+
+.service-card.animate-in:hover {
+  transform: translateY(-4px);
+}
+
+/* Staggered delays for service cards */
+.service-card:nth-child(1) { transition-delay: 0.05s; }
+.service-card:nth-child(2) { transition-delay: 0.15s; }
+.service-card:nth-child(3) { transition-delay: 0.25s; }
+.service-card:nth-child(4) { transition-delay: 0.35s; }
+
+/* ---------- 14. Service Icon ---------- */
+.service-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  background: var(--color-primary-50);
+  color: var(--color-primary);
+  border-radius: var(--radius-lg);
+}
+
+/* ---------- 15. Case Study Card ---------- */
+.case-study-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition-base);
+}
+
+.case-study-card.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.case-study-card:hover {
+  box-shadow:
+    var(--shadow-lg),
+    0 0 24px rgba(37, 99, 235, 0.15);
+}
+
+/* ---------- 16. Tech Tag ---------- */
+.tech-tag {
+  display: inline-block;
+  padding: 0.25rem 0.625rem;
+  background: var(--color-primary-50);
+  color: var(--color-primary);
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+/* ---------- 17. Certification Card ---------- */
+.cert-card {
+  background: var(--surface);
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition-base);
+}
+
+.cert-card.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cert-card:hover {
+  box-shadow:
+    var(--shadow-md),
+    0 0 16px rgba(37, 99, 235, 0.1);
+}
+
+/* ---------- 18. Process Step ---------- */
+.process-step {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition-base);
+}
+
+.process-step.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for process steps */
+.process-step:nth-child(1) { transition-delay: 0.05s; }
+.process-step:nth-child(2) { transition-delay: 0.15s; }
+.process-step:nth-child(3) { transition-delay: 0.25s; }
+.process-step:nth-child(4) { transition-delay: 0.35s; }
+
+/* ---------- 19. Process Number ---------- */
+.process-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background: var(--gradient);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.125rem;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+/* ---------- 20. Process Connector ---------- */
+.process-connector {
+  width: 2px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+/* ---------- 21. Contact Form & Inputs ---------- */
+.contact-form {
+  background: var(--surface);
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: var(--transition-base);
+}
+
+.form-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  background: var(--surface);
+}
+
+/* ---------- 22. Section Alt ---------- */
+.section-alt {
+  background-color: var(--bg-alt);
+}
+
+/* ---------- 23. Keyframe Animations ---------- */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility animation classes */
+.animate-fade-in {
+  animation: fade-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Animation delays (start hidden) */
+.animation-delay-200 {
+  opacity: 0;
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  opacity: 0;
+  animation-delay: 400ms;
+}
+
+/* ---------- 24. Responsive (≤ 768px) ---------- */
+@media (max-width: 768px) {
+  .stat-card {
+    padding: 1rem;
+  }
+
+  .skill-card {
+    padding: 1rem;
+  }
+
+  .skill-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .service-card {
+    padding: 1.25rem;
+  }
+
+  .service-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .process-number {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .process-connector {
+    display: none;
+  }
+
+  .contact-form {
+    padding: 1.25rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cert-card {
+    padding: 1.25rem;
+  }
+
+  .case-study-card .p-8 {
+    padding: 1.25rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .stat-card {
+    padding: 0.875rem;
+  }
+
+  .stat-card .text-3xl {
+    font-size: 1.5rem;
+  }
+
+  .skill-card {
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .skill-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .service-card {
+    padding: 1rem;
+  }
+
+  .tech-tag {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+/* Touch device hover fix */
+@media (hover: none) {
+  .skill-card:hover,
+  .service-card:hover,
+  .case-study-card:hover,
+  .cert-card:hover,
+  .stat-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+  }
+}
