@@ -1,0 +1,3 @@
+# Force the custom domain as the primary source
+# The ! forces the redirect even if a file exists at that path
+https://dataspec.netlify.app/* https://dataspec.dev/:splat  301!
